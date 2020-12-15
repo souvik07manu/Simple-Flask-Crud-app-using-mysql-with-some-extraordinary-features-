@@ -1,0 +1,45 @@
+{% include 'head.html' %}
+{% include 'header.html' %}
+
+<!-- <h1>Hoot Rasile {{ hh }}</h1>
+<button type="button" class="btn btn-outline-success">Warning</button>
+<a href="/logout">Logout</a> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col md-3">
+
+        </div>
+        <!-- {{values}} -->
+        <div class="col md-6" style="margin-top: 10px;">
+        <form action = "/edituseraction" method = "post">
+            <div class="form-group">
+                <input type="hidden" name="uid" value="{{ hh }}">
+                <div>
+                  <label style="font-weight: bold; font-size: 20px; margin-top:5px;">Name</label> 
+                  <input type="text" name="name" class="form-control" style="border: 1px solid #000; background-color: #fff; border-radius: 2px;" value='{{values.1}}'/>
+                </div> 
+
+                <div>
+                  <label style="font-weight: bold; font-size: 18px; margin-top: 10px;">E-mail</label> 
+                  <input type="email" name="email" style="border: 1px solid #000; background-color: #fff; border-radius: 2px;" class="form-control" value='{{values.2}}'/>
+                </div>
+
+                <div>
+                    <label style="font-weight: bold; font-size: 18px; margin-top: 10px;">Age</label> 
+                    <input type="text" name="age" style="border: 1px solid #000; background-color: #fff; border-radius: 2px;" class="form-control" value='{{values.4}}'/>
+                  </div>
+
+               <button type="submit" style="font-size: 12px; margin-top: 20px; border-radius: 2px;" class="btn btn-dark btn-block">Update</button>
+             </div>
+        </form>
+        </div>
+        <div class="col md-3">
+
+        </div>
+    </div>
+</div>
+
+
+
+{% include 'footer.html' %}

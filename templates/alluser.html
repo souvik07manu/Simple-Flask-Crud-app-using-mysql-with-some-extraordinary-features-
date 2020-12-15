@@ -1,0 +1,60 @@
+{% include 'head.html' %}
+{% include 'header.html' %}
+
+<table class="table">
+    <thead>
+      <tr class="table-info">
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Age</th>
+        <th scope="col">Action</th>
+    
+      </tr>
+    </thead>
+    <tbody>
+        {% for user in alluser %}
+        {% if user.0 != session['userID'] %}
+      <tr style="background-color: #1abc9c;">
+        <td style="font-weight: 500; font-size: large;">{{user.1}}</td>
+        <td style="font-weight: 500; font-size: large;">{{user.2}}</td>
+        <td style="font-weight: 500; font-size: large;">{{user.4}}</td>
+        <td><a href="/test/{{user.0}}" class="btn btn-warning btn-sm">Edit</a>
+        <!-- <a href="/deleteUser/{{user.0}}" class="btn btn-danger btn-sm">Delete</a> -->
+        
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter{{user.0}}">
+            Delete
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter{{user.0}}">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle{{user.0}}">Deleting User Permanently</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h3>{{user.1}}??</h3>
+                  <p>Are you sure?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <form action="{{url_for('deleteSingleUser', u_id=user.0)}}" method="post">
+                    <input type="submit" value="Delete" class="btn btn-danger">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  {% include 'footer.html' %}
+
+  

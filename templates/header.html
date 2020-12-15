@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+  <!-- <h4>Souvik Flask</h4> -->
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li {% if page == 'aa' %}class="nav-item active"{% endif %}>
+
+        <a class="nav-link" href="/aa">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <!--<li {% if page == 'normal' %}class="nav-item active"{% endif %}>
+        <a class="nav-link" href="/normal">Normal</a>
+      </li> !-->
+      <li {% if page == 'alluser' %}class="nav-item active"{% endif %}>
+        <a class="nav-link" href="/alluser">AllUsers</a>
+      </li>
+      <li {% if page == 'imageupload' %}class="nav-item active"{% endif %}>
+        <a class="nav-link" href="/imageupload">FileUpload</a>
+      </li>
+
+      
+    </ul>
+  </div>
+
+
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+        </li>
+    </ul>
+  </div>
+
+</nav>
+
+
+

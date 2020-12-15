@@ -1,0 +1,38 @@
+{% include 'head.html' %}
+{% include 'header.html' %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col md-1">
+
+        </div>
+
+        <div class="col md-5">
+           
+        </div>
+
+        <div class="col md-5" style="margin-top: 10px;">
+            <form action = "/imageuploadaction" method = "post" enctype=multipart/form-data>
+                <div class="form-group">
+                    <input type="text" name="uid" value="{{session['userID']}}">
+                    <div>
+                      <label style="font-weight: bold; font-size: 20px; margin-top:5px;">Choose File</label> 
+                      <input type="file" name="file" class="form-control" style="border: 1px solid #000; background-color: #fff; border-radius: 2px;"/>
+                    </div> 
+
+                    <button type="submit" style="font-size: 12px; margin-top: 20px; border-radius: 2px;" class="btn btn-dark btn-block">Upload</button>
+
+                </div>
+            </form>
+        </div>
+
+        <div class="col md-1">
+
+        </div>
+    </div>
+</div>
+
+
+
+{% include 'footer.html' %}
